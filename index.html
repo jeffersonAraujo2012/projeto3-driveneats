@@ -201,11 +201,12 @@
         if (!mainCourse) {
           mainCourse = clicked;
         } else {
-          mainCourse.classList.toggle("card--selected");
+          mainCourse.classList.remove("card--selected");
           mainCourse = clicked;
         }
 
-        clicked.classList.toggle("card--selected");
+        clicked.classList.add("card--selected");
+        buttonEnableToggle()
       }
 
       //Drink section pick handler.
@@ -215,11 +216,12 @@
         if (!drink) {
           drink = clicked;
         } else {
-          drink.classList.toggle("card--selected");
+          drink.classList.remove("card--selected");
           drink = clicked;
         }
 
-        clicked.classList.toggle("card--selected");
+        clicked.classList.add("card--selected");
+        buttonEnableToggle()
       }
 
       //Dessert section pick handler.
@@ -234,6 +236,16 @@
         }
 
         clicked.classList.add("card--selected");
+        buttonEnableToggle()
+      }
+
+      //Function that enables/disables the close order button.
+      function buttonEnableToggle() {
+        if (mainCourse && drink && dessert) {
+          const closeOrder = document.querySelector(".close-order");
+          closeOrder.classList.add("close-order--enabled");
+          closeOrder.lastElementChild.innerHTML = "Fechar pedido";
+        }
       }
     </script>
   </body>

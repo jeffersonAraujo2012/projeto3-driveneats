@@ -27,14 +27,19 @@
   word-wrap: break-word;
 }
 
+.close-order--enabled button {
+  background-color: var(--color-selected);
+  cursor: pointer;
+}
+
 @media (max-width: 392px) {
-    .close-order button {
-        padding: 0 70px;
-    }
+  .close-order button {
+    padding: 0 70px;
+  }
 }
 
 @media (max-width: 372px) {
-    .close-order button {
-        padding: 0 50px;
-    }
+  .close-order button {
+    padding: 0 50px;
+  }
 }
