@@ -1,0 +1,103 @@
+.card {
+  background-color: white;
+
+  flex-shrink: 0;
+  border-radius: 9px;
+  padding: 18px 14px 0;
+
+  /*
+    The attributes below ensure that the view
+    of cards will be similar on any screen until
+    412px viewport width
+  */
+  width: calc(calc(100vw * 172) / 414);
+  max-width: 172px;
+
+  margin-right: 16px;
+  margin-bottom: 5px;
+
+  font-family: var(--font-generic);
+
+  box-shadow: 0px 0px 10px -4px #00000040;
+}
+
+.card__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+  height: 87px;
+  margin-bottom: 8px;
+}
+
+.card__img img {
+  width: 100%;
+}
+
+.card__title,
+.card__description,
+.card__price {
+  font-size: 1rem;
+  line-height: 1.18rem;
+  margin-bottom: 8px;
+}
+
+.card__title {
+  color: var(--color-font);
+  font-weight: 700;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card__description {
+  height: 39px;
+  overflow: hidden;
+
+  font-size: 1rem;
+  line-height: 1.18rem;
+}
+
+.card__title {
+  color: var(--color-font);
+  font-weight: 700;
+}
+
+.card__description {
+  color: var(--color-description);
+  font-weight: 300;
+}
+
+.card__price {
+  color: var(--color-price);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 379px) {
+  .card {
+    padding: 14px 12px 0;
+    margin-right: 15px;
+  }
+
+  .card__img {
+    border-radius: 6px;
+  }
+
+  .card__price {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 365px) {
+  .card {
+    margin-right: 14px;
+  }
+
+  .card__img {
+    border-radius: 9px;
+  }
+}
