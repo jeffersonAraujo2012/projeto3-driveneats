@@ -27,7 +27,7 @@
       <section class="main-course">
         <h2>Primeiro, seu prato</h2>
         <div class="options">
-          <div class="card">
+          <div class="card" onclick="handlingMainCourseClick(event)">
             <div class="card__img">
               <img src="./assets/images/prato-individual-file-mignon.jpg" />
             </div>
@@ -37,9 +37,10 @@
               salada tradicional.
             </div>
             <div class="card__price">R$ 69,90</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingMainCourseClick(event)">
             <div class="card__img">
               <img src="./assets/images/estrogonofe-de-carne.jpg" />
             </div>
@@ -50,9 +51,10 @@
               arroz e batata palha.
             </div>
             <div class="card__price">R$ 35,90</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingMainCourseClick(event)">
             <div class="card__img">
               <img src="./assets/images/paella-vegetariana.jpeg" />
             </div>
@@ -63,9 +65,10 @@
               <strong>verdadeiro</strong> açafrão e diversos legumes.
             </div>
             <div class="card__price">R$ 54,90</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingMainCourseClick(event)">
             <div class="card__img">
               <img src="./assets/images/cordeiro.jpg" />
             </div>
@@ -75,6 +78,7 @@
               maravilhoso risoto de limão siciliano.
             </div>
             <div class="card__price">R$ 64,90</div>
+            <img src="./assets/images/selected.svg" />
           </div>
         </div>
       </section>
@@ -82,25 +86,27 @@
       <section class="drink">
         <h2>Agora, sua bebida</h2>
         <div class="options">
-          <div class="card">
+          <div class="card" onclick="handlingDrinkClick(event)">
             <div class="card__img">
               <img src="./assets/images/coca-cola-lata.jpg" />
             </div>
             <div class="card__title">Coca-cola</div>
             <div class="card__description">Coca-cola em lata 350ml.</div>
             <div class="card__price">R$ 5,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingDrinkClick(event)">
             <div class="card__img">
               <img src="./assets/images/guarana-antarctica.jpg" />
             </div>
             <div class="card__title">Guaraná Antarctica</div>
             <div class="card__description">Guaraná Antarctica em lata</div>
             <div class="card__price">R$ 5,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingDrinkClick(event)">
             <div class="card__img">
               <img src="./assets/images/suco-de-laranja.jpeg" />
             </div>
@@ -109,17 +115,17 @@
               Suco integral de laranja (500ml).
             </div>
             <div class="card__price">R$ 12,90</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingDrinkClick(event)">
             <div class="card__img">
               <img src="./assets/images/Vinho-Tinto.jpg" />
             </div>
             <div class="card__title">Vinho Tinto</div>
-            <div class="card__description">
-              Vinho da casa 1L.
-            </div>
+            <div class="card__description">Vinho da casa 1L.</div>
             <div class="card__price">R$ 49,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
         </div>
       </section>
@@ -127,29 +133,31 @@
       <section class="dessert">
         <h2>Por fim, sua sobremesa</h2>
         <div class="options">
-          <div class="card">
+          <div class="card" onclick="handlingDessertClick(event)">
             <div class="card__img">
-              <img src="./assets/images/pudim 1.png" class="h-100"/>
+              <img src="./assets/images/pudim 1.png" class="h-100" />
             </div>
             <div class="card__title">Pudim</div>
             <div class="card__description">
               Pudim tradicional com calda de caramelo.
             </div>
             <div class="card__price">R$ 9,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingDessertClick(event)">
             <div class="card__img">
-              <img src="./assets/images/petit-gateau.jpeg" class="h-100"/>
+              <img src="./assets/images/petit-gateau.jpeg" class="h-100" />
             </div>
             <div class="card__title">Petit Gateau</div>
             <div class="card__description">
               Delicioso Petit Gateau acompanhado do sorvete de baunilha da casa.
             </div>
             <div class="card__price">R$ 15,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingDessertClick(event)">
             <div class="card__img">
               <img src="./assets/images/crostata-de-maca.jpg" />
             </div>
@@ -158,9 +166,10 @@
               Maravilhosa sobremesa de maça com sorvete de baunilha da casa.
             </div>
             <div class="card__price">R$ 24,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
 
-          <div class="card">
+          <div class="card" onclick="handlingDessertClick(event)">
             <div class="card__img">
               <img src="./assets/images/panacota.jpg" />
             </div>
@@ -169,6 +178,7 @@
               Panacota tradicional com calda de frutas vermelhas.
             </div>
             <div class="card__price">R$ 19,99</div>
+            <img src="./assets/images/selected.svg" />
           </div>
         </div>
       </section>
@@ -177,5 +187,54 @@
     <div class="close-order">
       <button>Selecione os 3 itens para fechar o pedido</button>
     </div>
+
+    <script>
+      //Variables that store the chosen options.
+      let mainCourse = null;
+      let drink = null;
+      let dessert = null;
+
+      //Main course section pick handler.
+      function handlingMainCourseClick(event) {
+        const clicked = event.currentTarget;
+
+        if (!mainCourse) {
+          mainCourse = clicked;
+        } else {
+          mainCourse.classList.toggle("card--selected");
+          mainCourse = clicked;
+        }
+
+        clicked.classList.toggle("card--selected");
+      }
+
+      //Drink section pick handler.
+      function handlingDrinkClick(event) {
+        const clicked = event.currentTarget;
+
+        if (!drink) {
+          drink = clicked;
+        } else {
+          drink.classList.toggle("card--selected");
+          drink = clicked;
+        }
+
+        clicked.classList.toggle("card--selected");
+      }
+
+      //Dessert section pick handler.
+      function handlingDessertClick(event) {
+        const clicked = event.currentTarget;
+
+        if (!dessert) {
+          dessert = clicked;
+        } else {
+          dessert.classList.remove("card--selected");
+          dessert = clicked;
+        }
+
+        clicked.classList.add("card--selected");
+      }
+    </script>
   </body>
 </html>
