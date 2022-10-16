@@ -56,6 +56,83 @@ main > section > .options {
   scrollbar-width: none;
 }
 
-.h-100 {
-  height: 100% !important;
+.confirm-order {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding: 0 18px;
+  height: 100%;
+  width: 100%;
+
+  text-align: center;
+  background-color: rgba(255,255,255,0.9);
+
+  z-index: 9999;
+}
+
+.confirm-order--show {
+  display: flex;
+  align-items: center;
+}
+
+.confirm-order * {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.625rem;
+}
+
+.confirm-order-card {
+  background-color: #50D074;
+  
+  border-radius: 9px;
+  padding: 0 24px;
+  padding-top: 21px;
+
+  width: 100%;
+}
+
+.confirm-order h3{
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.order-item, .total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.confirm-order .total-price {
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.confirm-order-btn:hover, .cancel-order-btn:hover {
+  cursor: pointer;
+}
+
+.confirm-order-btn {
+  background-color: white;
+  color: #50D074;
+
+  border: 0px;
+  border-radius: 100px;
+  height: 52px;
+  width: 100%;
+}
+
+.cancel-order-btn {
+  background-color: #50D074;
+  color: white;
+
+  border: 0px;
+  border-radius: 100px;
+  height: 52px;
+  width: 100%;
 }

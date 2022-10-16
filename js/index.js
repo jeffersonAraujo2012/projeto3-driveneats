@@ -3,6 +3,10 @@ let mainCourse = null;
 let drink = null;
 let dessert = null;
 
+//Variables that store the user's info
+let username = null;
+let address = null;
+
 //Receives a string containing the price and converts it to a number
 function formatPrice(strPrice) {
   let price = strPrice.split(" ");
@@ -95,31 +99,79 @@ function handlingDessertClick(clicked) {
 }
 
 function handlingCloseOrderBtnClick(btn) {
+  username = null;
+  address = null;
   //The action of button is done only if mainCourse, drink and dessert exist
   if (mainCourse && drink && dessert) {
-    const name = prompt("Qual é o seu nome?");
-    const address = prompt("Digite seu endereço:");
+    //Request customer name and address
+    username = prompt("Qual é o seu nome?");
+    address = prompt("Digite seu endereço:");
 
-    if (name && address) {
+  //Username and address are required
+    if (username && address) {
+      const confirmOrder = document.querySelector(".confirm-order");
       const order = getOrder();
+      const items = confirmOrder.querySelectorAll(
+        ".confirm-order-card .order-item"
+      );
+      const ENUM_CATEGORIA = {
+        0: "mainCourse",
+        1: "drink",
+        2: "dessert",
+      };
 
-      //Genarates the msg
-      const whatsappMsg =
-        "Olá, gostaria de fazer o pedido:" +
-        `\n- Prato: ${order.mainCourse.title}` +
-        `\n- Bebida: ${order.drink.title}` +
-        `\n- Sobremesa: ${order.dessert.title}` +
-        `\nTotal: R$ ${totalPrice(order).toFixed(2)}`;
+      //Fills 'confirm-order-card' with the chosen items
+      items.forEach((item, index) => {
+        const title = order[ENUM_CATEGORIA[index]].title;
+        const price = order[ENUM_CATEGORIA[index]].price;
+        const priceFormated = "R$ " + price.toFixed(2).replace(".", ",");
 
-      //Generates the URL for whatsapp
-      const whatsappMsgUrl = `https://wa.me/5521975807969?text=${encodeURI(
-        whatsappMsg
-      )}`;
+        item.querySelector(".title").innerHTML = title;
+        item.querySelector(".price").innerHTML = priceFormated;
+      });
 
-      //Redirects the user to whatsapp
-      window.open(whatsappMsgUrl, "_blank");
+      //Fills the total price
+      const price = confirmOrder.querySelector(".total-price .price");
+      const priceFormated =
+        "R$" + totalPrice(order).toFixed(2).replace(".", ",");
+      price.innerHTML = priceFormated;
+
+      //Shows the 'confirm-order' on screen
+      confirmOrder.classList.add("confirm-order--show");
     } else {
-      alert ("Desculpe... Você precisa preencher os campos de nome e endereço para continuar.");
+      alert(
+        "Desculpe... Você precisa preencher os campos de nome e endereço para continuar."
+      );
     }
   }
+}
+
+function handlingConfirmOrderBtnClick() {
+  const order = getOrder();
+  
+  //Genarates the msg
+  const whatsappMsg =
+    "Olá, gostaria de fazer o pedido:" +
+    `\n- Prato: ${order.mainCourse.title}` +
+    `\n- Bebida: ${order.drink.title}` +
+    `\n- Sobremesa: ${order.dessert.title}` +
+    `\nTotal: R$ ${totalPrice(order).toFixed(2)}` +
+    `\n\n Nome: ${username}` +
+    `\n Endereço: ${address}`;
+
+  //Generates the URL for whatsapp
+  const whatsappMsgUrl = `https://wa.me/5521975807969?text=${encodeURI(
+    whatsappMsg
+  )}`;
+
+  //Redirects the user to whatsapp
+  window.open(whatsappMsgUrl, "_blank");
+
+  document.querySelector(".confirm-order").classList.remove("confirm-order--show");
+}
+
+function handlingCancelOrderBtnClick() {
+  document
+    .querySelector(".confirm-order")
+    .classList.remove("confirm-order--show");
 }
